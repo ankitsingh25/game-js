@@ -1,4 +1,5 @@
-var numSquares = 6;
+var gameSquareHardness = { Hard: 6, Easy: 3};
+var numSquares = gameSquareHardness.Hard;
 var color = [];
 var pickedColor ;
 var squares = document.querySelectorAll(".square");
@@ -18,7 +19,7 @@ function init()
 			modeButtons[0].classList.remove("selected");
 			modeButtons[1].classList.remove("selected");
 			this.classList.add("selected");
-			this.textContent === "Easy" ? numSquares = 3:numSquares = 6;
+			numSquares = this.textContent === "Easy" ?  gameSquareHardness.Easy : gameSquareHardness.Hard;
 			reset();
 		});
 	}
